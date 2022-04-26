@@ -24,8 +24,8 @@ plugins:
 - id: pipeline-event-step
 - id: pipeline-model-extensions
 - id: pipeline-stage-view
-- id: pipeline-utility-steps
 - id: warnings-ng
 - id: workflow-aggregator
 - id: workflow-cps-checkpoint
 # non-cap plugins
+- id: pipeline-utility-steps

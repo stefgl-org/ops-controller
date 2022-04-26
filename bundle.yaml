@@ -4,7 +4,7 @@ id: "stefgl-org-ops-controller"
 description: "CloudBees CI configuration bundle for the stefgl-org ops-controller Controller"
 availabilityPattern: "cloudbees-ci-casc-workshop/stefgl-org/ops-controller"
 jcasc:
-  - "jenkins.yaml"
+  - "jcasc/"
 plugins:
   - "plugins.yaml"
 items:

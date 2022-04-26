@@ -3,16 +3,13 @@ removeStrategy:
   items: NONE
 items:
 - kind: folder
-  displayName: controller-jobs
   name: controller-jobs
+  description: ''
+  displayName: controller-jobs
   items:
   - kind: organizationFolder
     name: controller-casc-update
-    orphanedItemStrategy:
-      defaultOrphanedItemStrategy:
-        pruneDeadBranches: true
-        daysToKeep: -1
-        numToKeep: -1
+    displayName: controller-casc-update
     navigators:
     - github:
         apiUri: https://api.github.com
@@ -24,6 +21,12 @@ items:
             includes: main
         repoOwner: stefgl-org
         credentialsId: cloudbees-ci-casc-workshop-github-app
+    orphanedItemStrategy:
+      defaultOrphanedItemStrategy:
+        pruneDeadBranches: true
+        daysToKeep: -1
+        numToKeep: -1
+        abortBuilds: false
     projectFactories:
     - customMultiBranchProjectFactory:
         factory:
@@ -42,3 +45,22 @@ items:
                     - branchSpec:
                         name: '*/main'
                 lightweight: true
+    strategy:
+      allBranchesSame: {
+        }
+    trigger:
+      periodicFolderTrigger:
+        interval: 1d
+  properties:
+  - envVars: {
+      }
+  - kubernetesFolderProperty: {
+      }
+  - itemRestrictions:
+      allowedTypes:
+      - org.jenkinsci.plugins.workflow.job.WorkflowJob
+      - hudson.model.FreeStyleProject
+      - jenkins.branch.OrganizationFolder
+      - org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject
+      filter: true
+

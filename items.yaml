@@ -60,6 +60,23 @@ items:
       allowedTypes:
       - org.jenkinsci.plugins.workflow.job.WorkflowJob
       - jenkins.branch.OrganizationFolder
+      - com.cloudbees.hudson.plugins.folder.Folder
+      - org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject
+      filter: true
+- kind: folder
+  name: test-jobs
+  description: ''
+  displayName: Test Jobs
+  properties:
+  - envVars: {
+      }
+  - kubernetesFolderProperty: {
+      }
+  - itemRestrictions:
+      allowedTypes:
+      - org.jenkinsci.plugins.workflow.job.WorkflowJob
+      - jenkins.branch.OrganizationFolder
+      - com.cloudbees.hudson.plugins.folder.Folder
       - org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject
       filter: true
 
